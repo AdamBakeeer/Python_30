@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block title%} InDEX PAGE {% endblock %}
+
+{%block content%}
+    <h1>hello world</h1>
+    <form method="POST" action="{{ url_for('index2') }}">
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="submit" value="login">
+    </form>
+
+    <h1>file upload</h1>
+    <form method="POST" Action="{{ url_for('file_upload') }}" enctype="multipart/form-data">
+        <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheet, application/vnd.ms-excel, text/plain">
+        <input type="submit" value="upload file">
+    </form>
+{%endblock%}
