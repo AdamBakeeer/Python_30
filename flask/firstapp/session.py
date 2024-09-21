@@ -6,13 +6,13 @@ app.secret_key = 'SOME KEY'
 
 @app.route('/')
 def index3():
-    return render_template('index3.html')
+    return render_template('index3.html', message='Index')
 
 @app.route('/set_data')
 def set_data():
     session['name'] = 'mike'
     session['other'] = 'hello world'
-    return render_template('index.html')
+    return render_template('index.html', message='session data set')
 
 
 if __name__ == '__main__':
